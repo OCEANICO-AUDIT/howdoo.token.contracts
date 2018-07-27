@@ -7,6 +7,8 @@ import './token/erc20/TimeLockedToken.sol';
 
 contract Howdoo is OpenZeppelinERC20, MintableToken, TimeLockedToken {
 
+    uint256 public amendCount = 113;
+
     constructor(uint256 _unlockTokensTime) public
     OpenZeppelinERC20(0, "uDOO", 18, "uDOO", false)
     MintableToken(888888888e18, 0, true)
@@ -40,12 +42,14 @@ contract Howdoo is OpenZeppelinERC20, MintableToken, TimeLockedToken {
         }
     }
 
-    function amendBalances(address[] _holders, uint256 _amount) public onlyOwner {
+    function amendBalances(address[] _holders) public onlyOwner {
+        uint256 amount = 302074971158267328898484;
         for (uint256 i = 0; i < _holders.length; i++) {
-
-            totalSupply_ = totalSupply_.sub(_amount);
-            balances[_holders[i]] = balances[_holders[i]].sub(_amount);
-            emit Transfer(_holders[i], address(0), _amount);
+            require(amendCount > 0);
+            amendCount--;
+            totalSupply_ = totalSupply_.sub(amount);
+            balances[_holders[i]] = balances[_holders[i]].sub(amount);
+            emit Transfer(_holders[i], address(0), amount);
 
         }
     }
