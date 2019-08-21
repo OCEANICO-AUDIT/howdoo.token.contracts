@@ -49,6 +49,7 @@ contract MintableToken is BasicToken, Ownable {
             allowedMinting = false;
         }
         emit Mint(_holder, _tokens);
+        emit Transfer(address(0), _holder, _tokens);
     }
 
     /// @notice update allowedMinting flat
