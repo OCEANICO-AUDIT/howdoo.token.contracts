@@ -13,7 +13,7 @@ contract TimeLockedToken is TimeLocked, StandardToken {
     constructor(uint256 _time) public TimeLocked(_time) {}
 
     function transfer(address _to, uint256 _tokens) public isTimeLocked(msg.sender, false) returns (bool) {
-       return super.transfer(_to, _tokens);
+        return super.transfer(_to, _tokens);
     }
 
     function transferFrom(
