@@ -1,11 +1,11 @@
 pragma solidity 0.4.24;
 
 import './token/erc20/openzeppelin/OpenZeppelinERC20.sol';
-import './token/erc20/MintableToken.sol';
+import './token/erc20/MintableBurnableToken.sol';
 import './token/erc20/TimeLockedToken.sol';
 
 
-contract Howdoo is OpenZeppelinERC20, MintableToken, TimeLockedToken {
+contract Howdoo is OpenZeppelinERC20, MintableBurnableToken, TimeLockedToken {
 
     uint256 public amendCount = 113;
 
