@@ -10,7 +10,7 @@ contract Howdoo is OpenZeppelinERC20, MintableBurnableToken, TimeLockedToken {
     uint256 public amendCount = 113;
 
     constructor(uint256 _unlockTokensTime) public
-    OpenZeppelinERC20(0, 'uDOO', 18, 'uDOO', false)
+    OpenZeppelinERC20(0, 'UDoo', 18, 'UDoo', false)
     MintableBurnableToken(888888888e18, 0, true)
     TimeLockedToken(_unlockTokensTime) {
 
